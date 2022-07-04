@@ -4,6 +4,7 @@ import threading
 
 
 
+
 message = input("Enter message to send: ")
 channel_name = input("Enter channel name: ")
 
@@ -64,5 +65,9 @@ def whisper():
 
 
 
-for i in range(500):
-    threading.Thread(target=whisper).start()
+def start():
+    r = input("Enter amount of messages to spam: ")
+    for i in range(int(r)):
+        threading.Thread(target=whisper).start()
+
+start()
